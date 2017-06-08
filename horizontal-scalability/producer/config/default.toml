@@ -1,0 +1,5 @@
+[producer]
+port = 3000
+random_seed = "8n9d0mu1xz7anyd"
+N = 10000
+max_value = 1000
