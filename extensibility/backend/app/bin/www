@@ -13,7 +13,9 @@ var config = require('config');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(config.get('backend.port') || process.env.PORT || '3000');
+ var port = normalizePort(config.has('backend.port') ?
+                          config.get('backend.port') :
+                          '3000');
 app.set('port', port);
 
 /**

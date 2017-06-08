@@ -14,7 +14,8 @@ var config = require('config');
  */
 
 var port = normalizePort(config.has('producer.port') ?
-                         config.get('producer.port') : (process.env.PORT || '3000'));
+                         config.get('producer.port') :
+                         '3000');
 app.set('port', port);
 
 /**
