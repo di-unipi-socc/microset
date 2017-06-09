@@ -15,10 +15,11 @@ The `/api` endpoint return a JSON object with the following fields:
 - `total`, total number of element in the system
 - `left`, elements left to consume
 - `time`, time spend to consume the elements
+- `consumers`, number of consumers
 
 The `/consume` endpoint return a JSON object with the following fields:
-- `value`, a number or `EOF`
-- `time`, time spend to consume all the elements
+- `value`, a number or `EOS`
+- `info`, and object with the state of the producer
 
 
 ### Default configuration:

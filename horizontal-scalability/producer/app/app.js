@@ -1,14 +1,14 @@
 /* jshint esversion: 6 */
 
-var express = require('express');
-var path = require('path');
-var logger = require('morgan');
-var debug = require('debug')('app:main');
-var bodyParser = require('body-parser');
-var config = require('config');
-var gen = require('random-seed');
+const express = require('express');
+const path = require('path');
+const logger = require('morgan');
+const debug = require('debug')('app:main');
+const bodyParser = require('body-parser');
+const config = require('config');
+const gen = require('random-seed');
 
-var app = express();
+const app = express();
 
 // get configurations
 const RANDOM_SEED = config.has('producer.random_seed') ?
@@ -32,34 +32,47 @@ app.use(express.static(path.join(__dirname, 'public')));
 var rand = gen.create(RANDOM_SEED),
     // values = Array.from({length: N}, () => rand(MAX_VALUE)),
     index = 0,
+    consumers = new Set(),
     start_time, end_time;
 
 var timeDiff = (t1, t2) => (t1 - t2) / 1000;
 
-var getInfo = () => {
-  return {
-    total: N,
-    left: N - index,
-    time: end_time ? timeDiff(end_time, start_time) : timeDiff(new Date().getTime(), start_time)
-  };
-};
+class Info_Obj {
+  constructor() {
+    this.total = N;
+    this.left = N - index;
+    this.time = end_time ? timeDiff(end_time, start_time) :
+                           timeDiff(new Date().getTime(), start_time);
+    this.consumers =  consumers.size;
+  }
+}
 
 app.get('/', (req, res, next) => {
-  res.render('index', getInfo());
+  res.render('index', new Info_Obj());
 });
 
 app.get('/api', (req, res, next) => {
-  res.json(getInfo());
+  res.json(new Info_Obj());
 });
 
+class Consume_Obj{
+  constructor(value){
+    this.value = value;
+    this.info = new Info_Obj();
+  }
+}
+
 app.get('/consume', (req, res, next) => {
+  var id = req.query.id || 'guest';
+  consumers.add(id);
+  debug(`Consumer id ${id}, #consumers ${consumers.size}`);
   if (index === 0) start_time = new Date().getTime();
   if (index == N && !end_time)  end_time = new Date().getTime();
   if (index < N) {
-    res.json({value: rand(MAX_VALUE)});
     index++;
+    res.json(new Consume_Obj(rand(MAX_VALUE)));
   } else {
-    res.json({value: 'EOF', time: getInfo().time});
+    res.json(new Consume_Obj('EOS'));
   }
 });
 

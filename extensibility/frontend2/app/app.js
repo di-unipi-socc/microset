@@ -1,14 +1,14 @@
 /* jshint esversion: 6 */
 
-var express = require('express');
-var path = require('path');
-var logger = require('morgan');
-var debug = require('debug')('app:main');
-var bodyParser = require('body-parser');
-var request = require('request');
-var config = require('config');
+const express = require('express');
+const path = require('path');
+const logger = require('morgan');
+const debug = require('debug')('app:main');
+const bodyParser = require('body-parser');
+const request = require('request');
+const config = require('config');
 
-var app = express();
+const app = express();
 
 // get configurations
 const BACKEND_ENDPOINT = config.has('frontend2.backend_endpoint') ?

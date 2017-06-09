@@ -11,8 +11,9 @@
   "license": "MIT",
   "dependencies": {
     "config": "^1.26.1",
-    "toml": "^2.3.2",
     "debug": "^2.6.8",
-    "request": "^2.81.0"
+    "request": "^2.81.0",
+    "toml": "^2.3.2",
+    "uuid": "^3.0.1"
   }
 }
