@@ -2,7 +2,6 @@ version: "3"
 services:
   frontend:
     build:
-      # context: ./frontend
       context: .
       dockerfile: Dockerfile-frontend
     image: diunipisocc/communication:frontend
