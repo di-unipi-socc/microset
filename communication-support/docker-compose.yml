@@ -9,7 +9,7 @@ services:
       - "3001:3001"
     environment:
       - DEBUG=app:*
-      - "NODE_CONFIG=\"{\"frontend\" \: {\"port\"\: 3001 , \"backend_endpoint\"\: \"http\://backend:3000\"}}\""
+      - 'NODE_CONFIG={"frontend" : {"port": 3001 , "backend_endpoint": "http://backend:3000"}}'
 
   backend:
     build:
