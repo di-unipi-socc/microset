@@ -10,7 +10,7 @@ const config = require('config');
 
 const app = express();
 
-// get configurations
+// get configuration
 const BACKEND_ENDPOINT = config.has('frontend.backend_endpoint') ?
                          config.get('frontend.backend_endpoint') :
                          'http://127.0.0.1:3000';

@@ -1,0 +1,13 @@
+FROM node:alpine
+
+RUN mkdir -p /usr/src/frontend
+WORKDIR /usr/src/frontend
+
+COPY /app/package.json /usr/src/frontend
+RUN npm install
+
+
+EXPOSE  3001
+COPY . /usr/src/frontend
+
+CMD [ "node", "app/bin/www" ]

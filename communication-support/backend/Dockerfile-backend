@@ -1,0 +1,13 @@
+FROM node:alpine
+
+RUN mkdir -p /usr/src/backend
+WORKDIR /usr/src/backend
+
+COPY /app/package.json /usr/src/backend
+RUN npm install
+
+
+EXPOSE  3000
+COPY . /usr/src/backend
+
+CMD [ "node", "app/bin/www" ]
