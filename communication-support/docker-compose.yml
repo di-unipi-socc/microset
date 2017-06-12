@@ -2,19 +2,26 @@ version: "3"
 services:
   frontend:
     build:
-        context: ./frontend
-        dockerfile: Dockerfile-frontend
+      # context: ./frontend
+      context: .
+      dockerfile: Dockerfile-frontend
     image: diunipisocc/communication:frontend
     ports:
-      - "3001:3001"
+    - "3001:3001"
     environment:
-      - DEBUG=app:*
-      - "NODE_CONFIG=\"{\"frontend\" \: {\"port\"\: 3001 , \"backend_endpoint\"\: \"http\://backend:3000\"}}\""
+      NODE_CONFIG: '{"frontend": {
+                        "port": 3001,
+                        "backend_endpoint": "http://backend:3000"
+                    }}'
 
   backend:
     build:
-        context: ./backend
-        dockerfile: Dockerfile-backend
+      context: .
+      dockerfile: Dockerfile-backend
     image: diunipisocc/communication:backend
     ports:
-      - "3000:3000"
+    - "3000:3000"
+    environment:
+      NODE_CONFIG: '{"backend": {
+                        "port": 3000
+                    }}'
