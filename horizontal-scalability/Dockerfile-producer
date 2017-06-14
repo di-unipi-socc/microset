@@ -1,0 +1,8 @@
+FROM node:alpine
+
+WORKDIR /
+COPY producer /producer
+
+RUN /producer/scripts/create.sh
+
+CMD [ "/producer/scripts/start.sh", "--wait" ]

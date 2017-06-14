@@ -1,0 +1,7 @@
+FROM node:alpine
+
+WORKDIR /
+COPY consumer /consumer
+RUN /consumer/scripts/create.sh
+
+CMD [ "/consumer/scripts/start.sh", "--wait" ]

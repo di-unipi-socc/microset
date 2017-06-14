@@ -1,0 +1,19 @@
+version: "2"
+services:
+  consumer:
+    build:
+      context: .
+      dockerfile: Dockerfile-consumer
+    image: diunipisocc/communication:consumer
+    environment:
+      NODE_CONFIG: '{"consumer": {
+                        "producer_endpoint": "http://producer:3000"
+                    }}'
+
+  producer:
+    build:
+      context: .
+      dockerfile: Dockerfile-producer
+    image: diunipisocc/communication:producer
+    ports:
+    - "3000:3000"
