@@ -26,9 +26,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 var backendRequest = (cb) => {
-  request.get(BACKEND_ENDPOINT, (error, responce, body) => {
+  request.get(BACKEND_ENDPOINT, (error, response, body) => {
     if (error) return cb(error);
-    debug(`backend request on ${BACKEND_ENDPOINT} status ${responce.statusCode}`);
+    debug(`backend request on ${BACKEND_ENDPOINT} status ${response.statusCode}`);
     body = JSON.parse(body);
     cb (null, body);
   });

@@ -6,7 +6,7 @@ This is a web service with two endpoints, `/` and `/api`, which return respectiv
 ------
 uptime: **43.433**
 
-responce number: **3**
+response number: **3**
 
 random number: **31239**
 

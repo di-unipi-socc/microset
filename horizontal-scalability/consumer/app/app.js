@@ -14,7 +14,7 @@ const id = uuid();
 debug(`consumer id ${id}`);
 
 var getValue = (cb) => {
-  request.get(`${PRODUCER_ENDPOINT}/consume?id=${id}`, (error, responce, body) => {
+  request.get(`${PRODUCER_ENDPOINT}/consume?id=${id}`, (error, response, body) => {
     if (error) return cb(error);
     cb (null, JSON.parse(body));
   });

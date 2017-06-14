@@ -23,7 +23,7 @@ var n_call = 1;
 var start_time = getSeconds();
 app.get('/', (req, res) => {
   res.json({
-    responce: n_call++,
+    response: n_call++,
     random: getEvenRandom(),
     uptime: getSeconds() - start_time
   });
