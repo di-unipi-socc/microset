@@ -1,0 +1,20 @@
+version: "2"
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile-frontend
+    image: diunipisocc/communication:frontend
+    ports:
+    - "3001:3001"
+    environment:
+      NODE_CONFIG: '{"frontend": {
+                        "port": 3001,
+                        "backend_endpoint": "http://backend:3000"
+                    }}'
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile-backend1
+    image: diunipisocc/communication:backend1
