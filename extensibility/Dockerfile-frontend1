@@ -1,0 +1,7 @@
+FROM node:alpine
+
+WORKDIR /
+COPY frontend1 /frontend
+RUN /frontend/scripts/create.sh
+
+CMD [ "/frontend/scripts/start.sh", "--wait" ]
