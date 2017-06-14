@@ -4,7 +4,4 @@ WORKDIR /
 COPY frontend /frontend
 RUN /frontend/scripts/create.sh
 
-
-# EXPOSE 3001
-
 CMD [ "/frontend/scripts/start.sh", "--wait" ]

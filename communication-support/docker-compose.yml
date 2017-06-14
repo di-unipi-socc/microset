@@ -18,9 +18,3 @@ services:
       context: .
       dockerfile: Dockerfile-backend
     image: diunipisocc/communication:backend
-    ports:
-    - "3000:3000"
-    environment:
-      NODE_CONFIG: '{"backend": {
-                        "port": 3000
-                    }}'
