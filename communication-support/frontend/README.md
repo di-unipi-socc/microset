@@ -1,5 +1,5 @@
 # Communication Support - Frontend
-This is a web service with two endpoints, `/` and `/api`, which return respectively HTML and JSON. In both case it does an HTTP get request to the backed and forward the response.
+This is a web service with two endpoints, `/` and `/api`, which return respectively HTML and JSON. In both cases it performs an HTTP GET request to the backend and forwards the response.
 
 ### Output example:
 

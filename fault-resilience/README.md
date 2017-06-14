@@ -1,5 +1,5 @@
 # Independent deployability - Fault resilience
-This is a web service with return the time since it was start on two endpoints, `/` and `/api`, which return respectively HTML and JSON. The service automatically stops after a configurable time interval do to internal error.
+This is a web service which returns the time since it was started on two endpoints, `/` and `/api`, which return respectively HTML and JSON. The service automatically stops after a configurable time interval to simulate an artificial internal error.
 
 Start the example with:
 ```

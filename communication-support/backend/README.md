@@ -1,6 +1,6 @@
 # Communication Support - Backend
-This is a RESTful web service with a single endpoint which return a JSON object with the following fields:
-- `response`, the number or response that the server replay
+This is a RESTful web service with a single endpoint which returns a JSON object with the following fields:
+- `response`, the number of responses so far
 - `random`, a random number from 1 to 1000000
 - `uptime`, seconds since the service start
 
