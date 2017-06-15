@@ -1,10 +1,11 @@
-# microSET: A reference dataset of microservice-based applications
+# microset
 
-- P1 - Communication support
-- P2 - Horizontal Scalability
-- P3 - Independent Deployability: Extensibility
-- P4 - Independent Deployability: Replaceability
-- P5 - Independent Deployability: Fault resilience
+This repository provides a dataset of microservice-based apps. If you wish to exploit such apps in evaluate solutions supporting microservice-based apps, please properly cite the paper presenting **microset**.
+```
+Antonio Brogi, Andrea Canciani, Davide Neri, Luca Rinaldi, Jacopo Soldani
+Towards a reference dataset of microservice-based applications
+[Submitted for publication] 
+```
 
 ## Build Status
 [![Build Status](https://travis-ci.org/di-unipi-socc/microset.svg?branch=master)](https://travis-ci.org/di-unipi-socc/microset)
