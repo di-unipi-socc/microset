@@ -1,4 +1,4 @@
-# Microservices Testbed
+# microSET: A reference dataset of microservice-based applications
 
 - P1 - Communication support
 - P2 - Horizontal Scalability
