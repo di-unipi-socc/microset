@@ -6,5 +6,5 @@ services:
       dockerfile: Dockerfile
     image: diunipisocc/fault-resilience:main
     ports:
-    - "3000:3000"
+    - 3000:3000
     restart: on-failure

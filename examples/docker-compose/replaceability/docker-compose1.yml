@@ -4,9 +4,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-frontend
-    image: diunipisocc/communication:frontend
+    image: diunipisocc/replaceability:frontend
+    links:
+    - backend
     ports:
-    - "3001:3001"
+    - 3001:3001
     environment:
       NODE_CONFIG: '{"frontend": {
                         "port": 3001,
@@ -16,5 +18,5 @@ services:
   backend:
     build:
       context: .
-      dockerfile: Dockerfile-backend2
-    image: diunipisocc/communication:backend2
+      dockerfile: Dockerfile-backend1
+    image: diunipisocc/replaceability:backend1

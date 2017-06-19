@@ -4,7 +4,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-consumer
-    image: diunipisocc/communication:consumer
+    image: diunipisocc/horizontal-scalability:consumer
+    links:
+    - producer
     environment:
       NODE_CONFIG: '{"consumer": {
                         "producer_endpoint": "http://producer:3000"
@@ -14,6 +16,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-producer
-    image: diunipisocc/communication:producer
+    image: diunipisocc/horizontal-scalability:producer
     ports:
-    - "3000:3000"
+    - 3000:3000

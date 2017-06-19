@@ -11,7 +11,7 @@ env:
   - TARGET=replaceability
 
 install:
-  - cd $TARGET
+  - cd examples/docker-compose/$TARGET
   - ./install.sh
 
 script:
