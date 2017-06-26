@@ -5,4 +5,4 @@ cp -r $abs_path/fault-resilience/main .
 
 docker-compose -f docker-compose.yml build
 
-rm -r fault-resilience
+rm -r main
