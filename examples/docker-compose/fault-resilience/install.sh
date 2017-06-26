@@ -1,7 +1,7 @@
 #!/bin/sh -xe
 abs_path=$(cd $(dirname $0)/../../.. && pwd)
 
-cp -r $abs_path/functionality-oriented/fault-resilience .
+cp -r $abs_path/fault-resilience .
 
 docker-compose -f docker-compose.yml build
 
