@@ -7,4 +7,3 @@ curl -f http://127.0.0.1:3000/api
 
 sleep 10
 curl -f http://127.0.0.1:3000/api
-# TODO: explicitly check that the time counter has decreased
